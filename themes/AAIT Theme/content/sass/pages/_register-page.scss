@@ -1,0 +1,48 @@
+.register-page {
+  .form-wrapper {
+    width: 85%;
+    margin: auto;
+    background-color: #F6F6F6;
+    box-shadow: 0 0 40px 0 hsla(0, 0%, 0%, 0.15);
+    padding: 30px 15px;
+
+    >h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: $mainColor;
+    }
+
+    form {
+      .input-wrap {
+        input {
+          &::placeholder {
+            color: $lightMainColor;
+          }
+        }
+
+        select {
+          color: $lightMainColor;
+        }
+      }
+
+      .file-wrap {
+
+        .fake-file {
+          text-align: center;
+          color: $lightMainColor;
+        }
+      }
+
+      .main-btn {
+        margin: auto;
+      }
+    }
+  }
+
+  .form-wrapper form .input-wrap input::-webkit-datetime-edit,
+  .form-wrapper form .input-wrap select::-webkit-datetime-edit,
+  .form-wrapper form .input-wrap textarea::-webkit-datetime-edit {
+    color: $lightMainColor;
+  }
+}

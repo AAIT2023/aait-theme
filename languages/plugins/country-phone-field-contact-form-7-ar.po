@@ -1,0 +1,213 @@
+# Translation of Plugins - Country &amp; Phone Field Contact Form 7 - Development (trunk) in Arabic
+# This file is distributed under the same license as the Plugins - Country &amp; Phone Field Contact Form 7 - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-01-02 09:25:47+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ((n == 1) ? 1 : ((n == 2) ? 2 : ((n % 100 >= 3 && n % 100 <= 10) ? 3 : ((n % 100 >= 11 && n % 100 <= 99) ? 4 : 5))));\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: ar\n"
+"Project-Id-Version: Plugins - Country &amp; Phone Field Contact Form 7 - Development (trunk)\n"
+
+#: includes/settings.php:116
+msgid ""
+"Countries code must two character length and comma separated.\n"
+"\t\t\t\t\t\tWrong Value: "
+msgstr ""
+"يجب أن يكون طول رمز الدول حرفين، ومفصولة بفواصل.\n"
+"\t\t\t\t\t\tقيمة خاطئة: "
+
+#: includes/phone-text.php:203
+msgid "Number Only"
+msgstr "رقم فقط"
+
+#: includes/phone-text.php:199 includes/phone-text.php:202
+msgid "Field Validation"
+msgstr "التحقق من صحة الحقل"
+
+#: includes/phone-text.php:134
+msgid "Phone number must be numbers only"
+msgstr "يجب أن يكون رقم الهاتف أرقامًا فقط"
+
+#: includes/settings.php:263
+msgid "After enable this check box. The phone number dial code will selected base on your computer IP Address. If default country not selected."
+msgstr "بعد تمكين خانة الاختيار هذه. سيتم تحديد رمز الاتصال الهاتفي بناءً على عنوان IP للكمبيوتر الخاص بك. إذا لم يتم تحديد البلد الافتراضي."
+
+#: includes/settings.php:257
+msgid "Enable Auto Dial Code Select"
+msgstr "تمكين رمز الاتصال الهاتفي تلقائيًا"
+
+#: includes/settings.php:252
+msgid "Disable phone number dial code. After checkbox enable. Dial code will not visible"
+msgstr "تعطيل رمز الاتصال الهاتفي. بعد تمكين مربع الاختيار. رمز الطلب غير مرئي"
+
+#: includes/settings.php:246
+msgid "Disable International dial codes"
+msgstr "تعطيل رموز الاتصال الدولية"
+
+#: includes/settings.php:197
+msgid "After enable this check box. The country dropdown will selected base on your computer IP Address. If default country not selected."
+msgstr "بعد تمكين خانة الاختيار هذه. ستكون القائمة المنسدلة للدولة متاحة للاختيار بناءً IP للكمبيوتر الخاص بك. إذا لم يتم تحديد البلد الافتراضي."
+
+#: includes/settings.php:191
+msgid "Enable Auto Country Select"
+msgstr "تمكين تحديد الدولة تلقائيًا"
+
+#: includes/settings.php:314
+msgid "Phone field dropdown settings."
+msgstr "إعدادات القائمة المنسدلة لحقل الهاتف"
+
+#: includes/settings.php:298
+msgid "Country dropdown field settings."
+msgstr "إعدادات حقل القائمة المنسدلة للدولة."
+
+#: includes/settings.php:203
+msgid "Phone Field Settings."
+msgstr "إعدادات حقل الهاتف."
+
+#: includes/settings.php:171 includes/settings.php:226
+msgid "Exclude Countries"
+msgstr "استبعاد الدول"
+
+#: includes/settings.php:148
+msgid "Country Options Settings."
+msgstr "إعدادات خيارات الدولة."
+
+#: includes/settings.php:75
+msgid "Documentation"
+msgstr "وثائق المساعدة"
+
+#: includes/settings.php:74
+msgid "Phone Field Settings"
+msgstr "إعدادات حقل الهاتف"
+
+#: includes/settings.php:73
+msgid "Country Field Settings"
+msgstr "إعدادات حقل الدولة"
+
+#: includes/settings.php:62
+msgid "Save Settings"
+msgstr "حفظ الإعدادات"
+
+#: includes/settings.php:53
+msgid "Enter Country 2 character ISO code. Countries will display at top the dropdown. Kindly enter comma separted countries code."
+msgstr "أدخل رمز الدولة ISO code المكوّن من رمزين. سيتم عرض الدول بأعلى القائمة المنسدلة. يرجى إدخال رموز الدول مفصولة بفواصل."
+
+#: includes/settings.php:52 includes/settings.php:181 includes/settings.php:236
+msgid "Preferred Countries"
+msgstr "الدول ذات الأولوية"
+
+#: includes/settings.php:50
+msgid "Enter Country 2 character ISO code. Countries will excluded from the dropdown. Kindly enter comma separted countries code."
+msgstr "أدخل رمز الدولة ISO code المكوّن من رمزين. سيتم استبعاد الدول من القائمة المنسدلة. يرجى إدخال رموز الدول مفصولة بفواصل."
+
+#: includes/settings.php:49
+msgid "Exclude  Countries"
+msgstr "استبعاد الدول"
+
+#: includes/settings.php:46
+msgid "Enter Country 2 character ISO code. Only selected counries will display in dropdown. Kindly enter comma separted countries code."
+msgstr "أدخل رمز الدولة ISO code المكوّن من رمزين. سيتم عرض الدول المحدَّدة فقط ضمن القائمة المنسدلة. يرجى إدخال رموز الدول مفصولة بفواصل."
+
+#: includes/settings.php:45 includes/settings.php:161 includes/settings.php:216
+msgid "Include Countries"
+msgstr "تضمين الدول"
+
+#: includes/settings.php:42
+msgid "Enter country 2 character ISO code. Default country will selected default country in dropdown."
+msgstr "أدخل رمز الدولة ISO code المكوّن من رمزين. الدولة الافتراضية سيتم تحديدها افتراضية بالقائمة المنسدلة."
+
+#: includes/settings.php:41 includes/settings.php:151 includes/settings.php:206
+msgid "Default Country"
+msgstr "الدولة الافتراضية"
+
+#: includes/settings.php:39
+msgid "Field settings"
+msgstr "إعدادات الحقل"
+
+#: includes/settings.php:35
+msgid "Country and phone field settings"
+msgstr "إعدادات حقل الدولة والهاتف"
+
+#: includes/settings.php:24
+msgid "CPF Settings"
+msgstr "إعدادات CPF"
+
+#: includes/settings.php:23
+msgid "Country and Phone field settings"
+msgstr "إعدادات حقل الدولة والهاتف"
+
+#. Author URI of the plugin
+msgid "http://narindersingh.in"
+msgstr "http://narindersingh.in"
+
+#. Author of the plugin
+msgid "Narinder Singh Bisht"
+msgstr "Narinder Singh Bisht"
+
+#. Description of the plugin
+msgid "Add country drop down with flags and phone number with country phone extensions field in contact form 7."
+msgstr "إضافة حقل لقائمة منسدلة للدولة مع الأعلام ورقم الهاتف مع حقل لملحقات هاتف الدولة لإضافة contact form 7."
+
+#. Plugin Name of the plugin
+msgid "Country & Phone Field Contact Form 7"
+msgstr "إضافة Country & Phone Field Contact Form 7"
+
+#: includes/phone-text.php:156
+msgid "Generate a form-tag for a phone number with flags icon text input field."
+msgstr "توليد وسم نموذج form-tag لرقم الهاتف phone number مع حقل إدخال نصي يتضمن أيقونة الأعلام."
+
+#: includes/phone-text.php:148
+msgid "phone number"
+msgstr "رقم الهاتف phone number"
+
+#: includes/country-text.php:178 includes/phone-text.php:222
+msgid "To use the value input through this field in a mail field, you need to insert the corresponding mail-tag (%s) into the field on the Mail tab."
+msgstr "لاستخدام القيمة المدخلة عبر هذا الحقل في حقل البريد الإلكتروني، أنت بحاجة إلى إدراج وسم البريد الإلكتروني (mail-tag) التالي %s في حقل المحتوى من خلال تبويب البريد الإلكتروني."
+
+#: includes/country-text.php:173 includes/phone-text.php:217
+msgid "Insert Tag"
+msgstr "إدراج الوسم"
+
+#: includes/country-text.php:160 includes/phone-text.php:194
+msgid "Class attribute"
+msgstr "فئة السمة Class"
+
+#: includes/country-text.php:155 includes/phone-text.php:189
+msgid "Id attribute"
+msgstr "مُعرّف السمة ID"
+
+#: includes/country-text.php:151 includes/phone-text.php:185
+msgid "Use this text as the placeholder of the field"
+msgstr "استخدام هذا النص كـ تسمية نائبة \"placeholder\" لهذا الحقل"
+
+#: includes/country-text.php:149 includes/phone-text.php:183
+msgid "Default value"
+msgstr "القيمة الافتراضية"
+
+#: includes/country-text.php:144 includes/phone-text.php:178
+msgid "Name"
+msgstr "الاسم"
+
+#: includes/country-text.php:138 includes/phone-text.php:172
+msgid "Required field"
+msgstr "حقل مطلوب"
+
+#: includes/country-text.php:134 includes/country-text.php:137
+#: includes/phone-text.php:168 includes/phone-text.php:171
+msgid "Field type"
+msgstr "نوع الحقل"
+
+#: includes/country-text.php:122
+msgid "Generate a form-tag for a country dorp list with flags icon text input field."
+msgstr "توليد وسم نموذج form-tag لقائمة منسدلة للدولة country dorp list مع حقل إدخال نصي يتضمن أيقونة الأعلام."
+
+#: includes/country-text.php:114
+msgid "country drop-down"
+msgstr "قائمة منسدلة للدولة country drop-down"
+
+#: country-phone-field-contact-form-7.php:38
+msgid "The %1$sCountry & Phone Field Contact Form 7%2$s plugin requires %1$sContact form 7%2$s plugin active to run properly. Please install %1$scontact form 7%2$s and activate"
+msgstr "تتطلب إضافة %1$sCountry & Phone Field Contact Form 7%2$s تفعيل إضافة %1$sContact form 7%2$s لتعمل بشكل صحيح. يرجى تنصيب %1$scontact form 7%2$s وتفعيلها"

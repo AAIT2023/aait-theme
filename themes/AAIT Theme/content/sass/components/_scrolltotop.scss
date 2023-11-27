@@ -1,0 +1,29 @@
+.up {
+  position: fixed;
+  bottom: 10px;
+  inset-inline-end: 15px;
+  background-color: $mainColor;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border: 1px solid #fff;
+  transition: $transition;
+  z-index: 9999;
+  transform: scale(0);
+
+  img {
+    width: 25px;
+  }
+
+}
+
+.up.active {
+  transform: scale(1);
+  transition: $transition;
+
+}

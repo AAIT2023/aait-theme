@@ -1,0 +1,193 @@
+// CLASS FOR WRAP ALL FORMS 
+
+
+.form-wrapper {
+  // background-color: #fff;
+  padding: 15px;
+  // border: 1px solid $mainColor;
+  border-radius: 12px;
+
+  form {
+    // width: 75%;
+    margin: auto;
+
+    label {
+      // margin-bottom: 20px;
+      display: block;
+      font-weight: bold;
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 10px;
+
+    }
+
+    // GLOBAL STYLE FOR ALL INPUTS WITH DIV WRAP HAS THIS CLASS 
+    .input-wrap {
+      margin-bottom: 20px;
+
+      input,
+      select,
+      textarea {
+
+        &:not([type='checkbox']),
+        &:not([type='submit']) {
+          background-color: transparent;
+          min-height: 45px;
+          padding: 10px;
+          direction: inherit;
+          border-radius: 6px;
+          flex-direction: row-reverse;
+          font-size: 16px;
+          border: 1px solid rgba(0, 0, 0, 0.281);
+          // color: $textColor;
+        }
+
+
+        &::-webkit-datetime-edit {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        &::-webkit-calendar-picker-indicator {
+          flex: 3;
+        }
+
+        &:focus {
+          border: 2px solid $mainColor;
+        }
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 10px;
+        background-image: url('../images/chevron-down-solid.svg');
+        background-repeat: no-repeat;
+        background-position: left 3% center;
+        background-size: 16px;
+        cursor: pointer;
+
+      }
+
+      input[type="submit"].main-btn {
+        background-color: $mainColor;
+        width: fit-content;
+        border: 1px solid $mainColor;
+        // border-radius: 0;
+        margin-bottom: 0;
+
+        &:hover {
+          background-color: #fff;
+          color: $mainColor;
+        }
+      }
+
+      // STYLING INPUT TYPE FILE 
+      .file-wrap {
+        position: relative;
+        height: 45px;
+        margin-bottom: 15px;
+
+        .fake-file {
+          background-color: #fff;
+          min-height: 45px;
+          padding: 10px;
+          direction: inherit;
+          border-radius: 0px;
+          flex-direction: row-reverse;
+          font-size: 18px;
+          border: 1px solid rgba(0, 0, 0, 0.281);
+          position: absolute;
+          top: 0;
+          z-index: 1;
+          width: 100%;
+          opacity: 1;
+          // background-image: url('../images/cv.png');
+          background-repeat: no-repeat;
+          background-position: left 1% center;
+          background-size: 25px;
+          color: $textColor;
+
+          &.hide {
+            opacity: 0;
+            transition: $transition;
+          }
+
+        }
+
+        input[type="file"] {
+          opacity: 0;
+          position: relative;
+          z-index: 2;
+
+          &::-webkit-file-upload-button {
+            display: none;
+          }
+
+          &.show {
+            opacity: 1;
+            transition: $transition;
+          }
+        }
+      }
+
+      span {
+        label {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          input[type="radio"] {
+            transform: scale(1.5);
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    // ADD THIS CLASS TO STYLE LAYOUT 
+    .wrap-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 0 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .input-wrap {
+        flex: 1;
+        width: 100%;
+      }
+
+      .wpcf7-checkbox {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .wpcf7-list-item {
+          flex: 1 1 45%;
+
+          label {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            input {
+              width: fit-content;
+              transform: scale(1.3);
+              accent-color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    br {
+      display: none;
+    }
+  }
+}

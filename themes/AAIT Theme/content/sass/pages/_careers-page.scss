@@ -1,0 +1,52 @@
+.careers-page {
+  .wrapper {
+    // width: 85%;
+    // margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+    gap: 20px 10px;
+    // padding: 50px 0;
+
+    li {
+      border-radius: 12px;
+      border: 1px solid #707070;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .heaad {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        h4 {
+          font-size: 16px;
+          font-weight: column-reverse
+        }
+
+        .job-location {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: #7f7f7f;
+        }
+      }
+
+      .text {
+        text-align: center;
+        max-height: 230px;
+      }
+
+      .main-btn {
+        font-size: 16px;
+        align-self: self-end;
+        margin: 0;
+      }
+    }
+  }
+
+
+
+}

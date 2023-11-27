@@ -1,0 +1,37 @@
+//==================================== VARIABLES & GENERIC================================================================
+
+//>>>>> MAIN 
+@import"./abstract/variables";
+@import"./abstract/mixins";
+@import"./abstract/generic";
+@import"./components/scrolltotop";
+@import"./components/loading";
+@import"./components/form";
+// @import"./components/search-div";
+
+// =============================LAYOUTS============================ 
+@import"./layout/upper-bar";
+@import"./layout/navbar";
+@import"./layout/navbar-mobile";
+@import"./layout/fixed-navbar";
+@import"./layout/header";
+@import"./layout/footer";
+
+// >>>>>>>>BREADCRUMP 
+@import"./components/breadcrump";
+
+
+// ======================================INDEX COMPONENTS================================ 
+// @import"./components/logo-section";
+
+
+
+// =========================================PAGES================================================
+
+// @import"./pages/about-page";
+
+
+
+
+// =================MEDIA QUERRIES =================
+@import"./media/media-quirres";

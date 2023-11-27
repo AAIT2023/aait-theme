@@ -1,0 +1,56 @@
+.blog-page {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 20px;
+
+    li {
+      box-shadow: 0 7px 7px rgba(0, 0, 0, 0.16);
+
+      .image-wrap {
+        aspect-ratio: 16 / 9;
+      }
+
+      .body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .heaad {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 20px;
+          height: 65px;
+          overflow: hidden;
+
+          h3 {
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+          }
+
+          .date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #7F7F7F;
+          }
+        }
+
+        .text {
+          height: 230px;
+          margin-bottom: 20px;
+        }
+
+        .main-btn {
+          margin: 0;
+          align-self: self-end;
+          font-size: 16px;
+          min-width: fit-content;
+        }
+      }
+    }
+  }
+}

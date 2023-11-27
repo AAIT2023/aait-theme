@@ -1,0 +1,29 @@
+.complains-page {
+
+
+  .head {
+    .text {
+      width: 80%;
+    }
+  }
+
+  form {
+    .input-wrap {
+      margin-bottom: 30px;
+      position: relative;
+
+      textarea {
+        padding: 20px;
+      }
+
+      svg {
+        position: absolute;
+        left: 15px;
+        right: auto;
+        top: 15px;
+      }
+
+      .main-btn {}
+    }
+  }
+}

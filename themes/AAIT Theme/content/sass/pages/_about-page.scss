@@ -1,0 +1,35 @@
+.about-page {
+
+  .about {
+
+    margin-bottom: 80px;
+
+    .cont--edit .wrapper {
+      flex-direction: column;
+      width: 100%;
+      position: unset;
+
+      .head h3 {
+        flex-direction: row;
+      }
+
+      .text {
+        position: absolute;
+        bottom: -40px;
+        width: 85%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        box-shadow: 0 0 3px 3px #0000000f;
+        background-color: #fffc;
+        padding-bottom: 55px;
+
+      }
+    }
+
+  }
+
+
+
+
+}

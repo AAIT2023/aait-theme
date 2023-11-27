@@ -1,0 +1,60 @@
+// IMPORT FONT FILES  
+@font-face {
+  font-family: 'Almarai';
+  src: url('fonts/marai-font/Almarai-Regular.eot');
+  src: url('fonts/marai-font/Almarai-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/marai-font/Almarai-Regular.woff2') format('woff2'),
+    url('fonts/marai-font/Almarai-Regular.woff') format('woff'),
+    url('fonts/marai-font/Almarai-Regular.ttf') format('truetype'),
+    url('fonts/marai-font/Almarai-Regular.svg#Almarai-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Almarai';
+  src: url('fonts/marai-font/Almarai-Bold.eot');
+  src: url('fonts/marai-font/Almarai-Bold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/marai-font/Almarai-Bold.woff2') format('woff2'),
+    url('fonts/marai-font/Almarai-Bold.woff') format('woff'),
+    url('fonts/marai-font/Almarai-Bold.ttf') format('truetype'),
+    url('fonts/marai-font/Almarai-Bold.svg#Almarai-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Almarai';
+  src: url('fonts/marai-font/Almarai-Light.eot');
+  src: url('fonts/marai-font/Almarai-Light.eot?#iefix') format('embedded-opentype'),
+    url('fonts/marai-font/Almarai-Light.woff2') format('woff2'),
+    url('fonts/marai-font/Almarai-Light.woff') format('woff'),
+    url('fonts/marai-font/Almarai-Light.ttf') format('truetype'),
+    url('fonts/marai-font/Almarai-Light.svg#Almarai-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+// DEFINE MAIN VARIABLES 
+
+// TRANSITIONS WITH DIFFRENT TIMES 
+$transition:all .5s ease-in-out;
+$transition3:all .3s ease-in-out;
+$transition7:all .7s ease-in-out;
+
+$fontMarai:'Almarai';
+/* MAIN FONT FAMILY */
+$textColor:#7f7f7f;
+/* TEXT COLOR FOR  WEBSITE */
+$mainColor:#6E3627;
+/* MAIN COLOR FOR  WEBSITE */
+$greenColor : #1C453D;
+/* SECONDARY COLOR FOR  WEBSITE */
+$lightMainColor:#E6CA5533;
+/* LIGHT  COLOR FOR WEBSITE */
+$backgroundColor:rgb(248, 249, 245);
+/* background color FOR WEBSITE  */
+// $goldColor:#CFAD7E;
