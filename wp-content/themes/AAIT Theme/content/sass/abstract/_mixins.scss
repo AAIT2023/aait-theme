@@ -1,10 +1,28 @@
 // DISPLAY FLEX MIXIN
-
-@mixin displayFlex($align: center, $justify: center, $gap: 20px) {
+@mixin displayFlex(
+  $direction: row,
+  $align: center,
+  $justify: center,
+  $gap: 20px
+) {
   display: flex;
+  flex-direction: $direction;
   align-items: $align;
   justify-content: $justify;
   gap: $gap;
+}
+
+/* TEXT TRUNCATE MIXIN
+  $lines => for max lines to show
+  $maxWidth => for max element width
+*/
+@mixin textTruncate($lines: 1, $maxWidth: 100%) {
+  max-width: $maxWidth;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
 }
 
 /* display grid mixin 
