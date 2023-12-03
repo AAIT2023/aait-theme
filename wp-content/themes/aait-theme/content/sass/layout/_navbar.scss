@@ -1,0 +1,207 @@
+.nav-bar {
+  // padding: 15px 0;
+  // background-color: $mainColor;
+  color: $mainColor;
+  padding-block: 10px;
+
+  .nav-flex {
+    @include displayFlex($justify: space-between, $gap: 12px);
+
+    .navbar-brand {
+      width: 185px;
+    }
+
+    .navbar-links {
+      @include displayFlex($wrap: wrap);
+      flex: 1;
+      > li {
+        position: relative;
+
+        > a {
+          position: relative;
+          @include displayFlex($justify: space-between, $gap: 10px);
+          padding: 20px 5px;
+          font-size: 18px;
+          transition: $transition;
+          border-radius: 6px;
+          // color: rgb(127, 127, 127);
+          font-weight: bold;
+
+          &::before {
+            @extend %pseudo-ele;
+            bottom: -20px;
+            inset-inline-start: 0;
+            inset-inline-end: 0;
+            margin: auto;
+            width: 0;
+            height: 4px;
+            background-color: $mainColor;
+            transition: $transition;
+          }
+
+          &:hover,
+          &.active {
+            color: $mainColor;
+
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+
+        &.menu-item-has-children {
+          > a {
+            @include displayFlex($justify: space-between, $gap: 10px);
+
+            &:after {
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              content: "\f107";
+              // margin: 0 5px;
+              color: #aaaaaa;
+            }
+          }
+        }
+
+        .sub-menu {
+          position: absolute;
+          inset-block-start: 93px;
+          background: $mainColor;
+          // padding: 15px;
+          @include displayFlex(
+            $direction: column,
+            $align: unset,
+            $justify: flex-start,
+            $gap: 0
+          );
+          width: 160px;
+          opacity: 0;
+          visibility: hidden;
+          transition: $transition;
+          overflow: initial;
+
+          > li {
+            padding: 15px 10px;
+
+            &:not(:last-child) {
+              border-bottom: 1px solid $borderColor;
+            }
+
+            a {
+              color: #fff;
+              font-weight: bold;
+              font-size: 14px;
+            }
+
+            &.menu-item-has-children {
+              position: relative;
+
+              > a {
+                position: relative;
+                @include displayFlex($justify: space-between, $gap: 0);
+                &:after {
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 900;
+                  content: "\f104";
+                  margin: 0 5px;
+                }
+              }
+
+              > .sub-menu {
+                position: absolute;
+                inset-block-start: 0;
+                left: -100px;
+                background: $mainColor;
+                // padding: 15px;
+                @include displayFlex(
+                  $direction: column,
+                  $align: unset,
+                  $justify: flex-start,
+                  $gap: 0
+                );
+                width: 160px;
+                opacity: 0;
+                visibility: hidden;
+                transition: $transition;
+              }
+
+              &:hover {
+                > .sub-menu {
+                  transition: $transition;
+                  inset-block-start: 0px;
+                  left: -160px;
+                  opacity: 1;
+                  visibility: visible;
+                  // @extend %shadow;
+                  z-index: 255;
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          // >a {
+          //   // color: $mainColor;
+          // }
+
+          > .sub-menu {
+            transition: $transition;
+            inset-block-start: 87px;
+            opacity: 1;
+            visibility: visible;
+            // box-shadow: 0px 0px 6px 3px rgba(238, 238, 238, 0.75);
+            z-index: 254;
+          }
+        }
+      }
+
+      li {
+        position: relative;
+      }
+    }
+
+    // CLASS FOR HAMBURGER ICON FOR  MENU
+    .toggle-btn {
+      width: 31px;
+      height: 21px;
+      @include displayFlex(column, unset, space-between, unset, unset);
+      flex: 0 0 10.5%;
+      cursor: pointer;
+      // order: 2;
+      .bar {
+        background-color: $mainColor;
+        width: 100%;
+        height: 3px;
+      }
+    }
+
+    .icons {
+      @include displayFlex($justify: unset);
+      // margin-inline-start: auto;
+      // padding-inline-end: 20px;
+      color: $textColor;
+      // display: none;
+
+      .languages {
+        @include displayFlex($gap: 5px);
+        color: $textColor;
+        font-size: 20px;
+        font-weight: bold;
+
+        img {
+          width: 25px;
+        }
+      }
+    }
+
+    .main-btn {
+      margin: 0;
+      min-width: 120px;
+      // background-color: transparent;
+      // border: 2px solid #fff;
+      // color: #fff;
+      // padding: 5px;
+    }
+  }
+}

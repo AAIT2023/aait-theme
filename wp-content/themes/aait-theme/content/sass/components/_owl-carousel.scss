@@ -1,0 +1,102 @@
+// GLOBAL STYLES FOR OWL NAV AND OWL DOTS
+.owl-carousel {
+  .owl-dots {
+    position: absolute;
+    bottom: -40px;
+    // inset-inline-end: 30px;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+
+    .owl-dot {
+      // transition: $transition;
+      // background: #808080;
+      // border-radius: 50%;
+      // padding: 5px;
+      // @include displayFlex($gap: 0);
+      // width: 25px;
+      // aspect-ratio: 1/1;
+      // color: #fff;
+
+      span {
+        // background-color: #fff;
+        width: 10px;
+        height: 10px;
+        margin: 0;
+        background-color: #6d5d5d;
+        transition: $transition;
+        display: block;
+        border-radius: 50%;
+      }
+
+      &.active {
+        // background-color: #fff;
+        // transition: $transition;
+
+        span {
+          background-color: $mainColor;
+          transition: $transition;
+          // width: 25px;
+          // height: 8px;
+          // display: block;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  .owl-nav {
+    position: absolute;
+    top: 58%;
+    inset-inline-end: 0;
+    inset-inline-start: 0;
+    margin: auto;
+    transform: translate(0, -50%);
+    width: 100%;
+    @include displayFlex($justify: space-between, $gap: 10px);
+    height: 0;
+
+    button.owl-prev,
+    button.owl-next {
+      // position: absolute;
+      color: $mainColor;
+      font-size: 18px;
+      margin: 0 5px;
+      // background-color: transparent;
+      width: 30px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      @include displayFlex();
+      border: 2px solid #fff;
+      // background-color: #fff;
+      // transition: $transition;
+
+      svg {
+        color: $mainColor;
+        font-size: inherit;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        // width: 100%;
+        // height: 100%;
+        // border-radius: 50%;
+        // border: 2px solid #fff;
+        // width: 20px;
+        // height: 20px;
+      }
+    }
+
+    .owl-prev {
+      inset-inline-start: 20px;
+      inset-block-end: 20px;
+    }
+
+    .owl-next {
+      inset-inline-start: 40px;
+      inset-block-end: 20px;
+    }
+  }
+}

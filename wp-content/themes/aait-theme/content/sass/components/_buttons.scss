@@ -1,0 +1,35 @@
+// MAIN BUTTON OF WEBSITE
+.main-btn {
+  background-color: $mainColor;
+  padding: 10px;
+  min-width: 170px;
+  width: fit-content;
+  color: #fff;
+  text-align: center;
+  border: 1px solid $mainColor;
+  font-size: 18px;
+  @include displayFlex();
+  gap: 10px;
+  position: relative;
+  z-index: 3;
+  transition: $transition;
+  border-radius: 6px;
+
+  &:hover {
+    transition: $transition;
+    background-color: #fff;
+    color: #000;
+  }
+
+  &.reversed {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+
+    &:hover {
+      background-color: $mainColor;
+      color: #fff;
+      border: 2px solid $mainColor;
+    }
+  }
+}
