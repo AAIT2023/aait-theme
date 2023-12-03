@@ -8,6 +8,10 @@ body {
   // background-image: url('../images/body-bgsvg.svg');
 }
 
+[dir="ltr"] body {
+  direction: ltr;
+}
+
 // GLOBAL STYLE FOR ALL TEXT
 .text {
   color: $textColor;

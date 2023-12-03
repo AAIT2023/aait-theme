@@ -146,6 +146,10 @@ select {
   cursor: pointer;
 }
 
+[dir=ltr] select {
+  background-position: right 3% center;
+}
+
 body {
   font-family: "Roboto";
   direction: rtl;
@@ -153,6 +157,10 @@ body {
   position: relative;
   background-color: #fff;
   overflow-x: hidden;
+}
+
+[dir=ltr] body {
+  direction: ltr;
 }
 
 .text {

@@ -106,3 +106,7 @@ select {
   background-size: 16px;
   cursor: pointer;
 }
+
+[dir="ltr"] select {
+  background-position: right 3% center;
+}
