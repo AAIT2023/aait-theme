@@ -5,8 +5,47 @@ $(document).ready(function () {
     $(".page-loading").fadeOut();
   }, 4000);
 
-  // START NAV BAR
+  // =============== HANDLE HEADER PADDING AND ABSOLUTE NAVBAR INSIDE THE HEADER
+  // var navbar = document.querySelector(".nav-bar"),
+  //   header = document.querySelectorAll(".page-header .slide-content");
+  // function setHeaderTopPadding() {
+  //   $(header).css("padding-top", `${$(navbar).outerHeight()}px`);
+  // }
+  // setHeaderTopPadding();
 
+  // window.onresize = function () {
+  //   setHeaderTopPadding();
+  // };
+
+  // =============== HANDLE HEADER VIDEO
+  // var videoEl = document.getElementById("headerVideo");
+  // var playIcon = $(videoEl).siblings(".play-icon");
+
+  // $(playIcon).click(function () {
+  //   checkVideoStatus();
+  //   videoEl.play();
+  // });
+
+  // $(videoEl).on("pause , play", function () {
+  //   checkVideoStatus();
+  // });
+
+  // function checkVideoStatus() {
+  //   if (videoEl.paused) {
+  //     $(playIcon).show();
+  //     $(videoEl).removeAttr("controls");
+  //   } else {
+  //     $(playIcon).hide();
+  //     $(videoEl).attr("controls", "controls");
+  //   }
+  // }
+
+  // =============== PUT OWL DOTS INSIDE CONTAINER IN HEADER IF NEEDED
+  // if ($(".header-carousel").hasClass("owl-loaded")) {
+  //   $(".header-carousel").find(".owl-dots").addClass("container");
+  // }
+
+  // START NAV BAR
   $(".menu-btn").on("click", function () {
     // MOBILE NAVBAR
     $(".navbar-mobile").addClass("active");
@@ -108,10 +147,16 @@ $(document).ready(function () {
     autoplay: true,
     animateIn: "fadeIn",
     animateOut: "fadeOut",
-    navText: [
-      "<i class='owl-btn  fa-solid fa-arrow-right'></i>",
-      "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
-    ],
+    navText:
+      dir == "rtl"
+        ? [
+            "<i class='owl-btn  fa-solid fa-arrow-right'></i>",
+            "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
+          ]
+        : [
+            "<i class='owl-btn  fa-solid fa-arrow-right'></i>",
+            "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
+          ],
     responsiveClass: true,
     responsive: {
       0: {
@@ -140,10 +185,16 @@ $(document).ready(function () {
     autoplay: true,
     animateIn: "fadeIn",
     animateOut: "fadeOut",
-    navText: [
-      "<i class='owl-btn  fa-solid fa-arrow-right'></i>",
-      "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
-    ],
+    navText:
+      dir == "rtl"
+        ? [
+            "<i class='owl-btn  fa-solid fa-arrow-right'></i>",
+            "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
+          ]
+        : [
+            "<i class='owl-btn  fa-solid fa-arrow-right'></i>",
+            "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
+          ],
     responsiveClass: true,
     responsive: {
       0: {
@@ -171,10 +222,10 @@ $(document).ready(function () {
   let span = document.querySelector(".up");
   window.onscroll = () => {
     if (scrollY >= 400) {
-      span.classList.add("active");
+      span.classList.add("show");
       // $('.fixed-nav').addClass('fixed');
     } else {
-      span.classList.remove("active");
+      span.classList.remove("show");
     }
   };
   span.onclick = () => {
@@ -215,12 +266,6 @@ $(document).ready(function () {
     }
   });
 
-  // START LIGHT LIGHTGALLERY
-
-  lightGallery(document.getElementById("bussiness-gallery"), {
-    selector: ".image-wrap",
-    plugins: [lgZoom, lgThumbnail],
-  });
+  // START FANCYBOX
+  Fancybox.bind("[data-fancybox]");
 });
-
-// comment tet

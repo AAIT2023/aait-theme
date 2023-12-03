@@ -1,0 +1,11 @@
+body {
+  direction: ltr;
+}
+
+select {
+  background-position: right 3% center;
+}
+
+form .input-wrap .file-wrap .fake-file {
+  background-position: right 1% center;
+}

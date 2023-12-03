@@ -1,0 +1,234 @@
+// ROUNDED SHAPE
+.border-circle {
+  border-radius: 100%;
+}
+
+// TEXT IN CENTER
+.text-center {
+  text-align: center;
+}
+
+//  SET ABSOLUTE ELEMENT IN CENTER X AND Y
+.element-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+// GAP BETWEEN ITEMS VERTICALLY IN ROW CLASS
+.row-gap-10 {
+  row-gap: 10px;
+}
+
+.row-gap-20 {
+  row-gap: 20px;
+}
+
+.row-gap-30 {
+  row-gap: 30px;
+}
+
+.row-gap-40 {
+  row-gap: 40px;
+}
+
+.row-gap-50 {
+  row-gap: 50px;
+}
+
+//MARGIN BOTTOM
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.mb-70 {
+  margin-bottom: 70px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.mb-90 {
+  margin-bottom: 90px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+//MARGIN TOP
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mt-90 {
+  margin-top: 90px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+// PADDING ELEMENT TOP AND BOTTOM
+.p-y-10 {
+  padding-block: 10px;
+}
+
+.p-y-20 {
+  padding-block: 20px;
+}
+
+.p-y-30 {
+  padding-block: 30px;
+}
+
+.p-y-40 {
+  padding-block: 40px;
+}
+
+.p-y-50 {
+  padding-block: 50px;
+}
+
+// PADDING ELEMENT RIGHT AND LEFT
+.p-x-5 {
+  padding-inline: 5px;
+}
+
+.p-x-10 {
+  padding-inline: 10px;
+}
+
+.p-x-15 {
+  padding-inline: 15px;
+}
+
+.p-x-20 {
+  padding-inline: 20px;
+}
+
+.p-x-25 {
+  padding-inline: 25px;
+}
+
+//full padding to elements
+
+.p-2 {
+  padding: 2px;
+}
+
+.p-4 {
+  padding: 4px;
+}
+
+.p-6 {
+  padding: 6px;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+.p-14 {
+  padding: 14px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.p-18 {
+  padding: 18px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.above-all {
+  overflow: hidden;
+  position: relative;
+}
