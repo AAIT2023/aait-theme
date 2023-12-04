@@ -1,0 +1,16 @@
+.fixed-nav {
+  background-color: #fff;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 3px #00000030;
+    margin-bottom: 20px;
+
+  }
+}
