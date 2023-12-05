@@ -90,6 +90,8 @@ add_action( 'after_setup_theme', 'mytheme_register_nav_menu', 0 );
         'menu_name' => __( 'الاقسام' ),
     ];
 */
+
+// FUNCTION TO CREATE POST TYPE 
 function createPostType(
     string $namePostType, 
     array $arrayOptionPostType,
@@ -130,33 +132,23 @@ function createPostType(
           ));
     }
 }
+
+
 /*
-  //to create post type only
-  createPostType(
-    'services',
+  //EXAMPLE TO CREATE POST TYPE ONLY  WITHOUT TAXONOMY 
+*/
+    createPostType(
+    'services',  // TYPE YOUR POST TYPE NAME HERE 
     [
-        'name' => 'الخدمات',
-        'singular_name' => 'الخدمات',
+        'name' => 'الخدمات', // TYPE YOUR POST TYPE NAME HERE IN ARABIC 
+        'singular_name' => 'الخدمات', 
         'add_new' => 'اضف خدمة جديده',
         'add_new_item' => 'اضف خدمة جديده',
-        'edit_item' => 'تعديل الخدمة'
+        'edit_item' => 'تعديل الخدمة',
+
     ]
   );
 
-  //to create post type and Taxonomy with Default labels for Taxonomy
-  [
-    'name' => _x( 'الاقسام', 'taxonomy general name' ),
-    'singular_name' => _x( 'الاقسام', 'taxonomy singular name' ),
-    'search_items' =>  __( 'بحث عن الاقسام' ),
-    'all_items' => __( 'كل الاقسام' ),
-    'parent_item' => __( 'Parent Subject' ),
-    'parent_item_colon' => __( 'Parent Subject:' ),
-    'edit_item' => __( 'تعديل القسم' ), 
-    'update_item' => __( 'تحديث القسم' ),
-    'add_new_item' => __( 'اضف قسم جديده' ),
-    'new_item_name' => __( 'اسم جديد للقسم' ),
-    'menu_name' => __( 'الاقسام' ),
-  ]
   createPostType(
     'services',
     [
@@ -166,12 +158,12 @@ function createPostType(
         'add_new_item' => 'اضف خدمة جديده',
         'edit_item' => 'تعديل الخدمة'
     ],
-    true,
+    true, //SET TO TRUE TO ACTIVATE TAXONOMY 
   );
 
-  //to create post type and Taxonomy 
+  //EXAMPLE TO CREATE POST TYPE WITH TAXONOMY 
   createPostType(
-    'services',
+    'services', // TYPE YOUR POST TYPE NAME HERE 
     [
         'name' => 'الخدمات',
         'singular_name' => 'الخدمات',
@@ -179,7 +171,7 @@ function createPostType(
         'add_new_item' => 'اضف خدمة جديده',
         'edit_item' => 'تعديل الخدمة'
     ],
-    true,
+    true, 
     [
     'name' => _x( 'اقسام الخدمات', 'taxonomy general name' ),
     'singular_name' => _x( 'اقسام الخدمات', 'taxonomy singular name' ),
