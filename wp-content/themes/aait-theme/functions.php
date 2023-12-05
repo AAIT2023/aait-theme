@@ -250,17 +250,31 @@ function lang_in_return($ar, $en){
  * (string) $mainPostType 
  * The name of the post type you want to filter based on
  * 
+ * (int) $postsPerPage number of posts per page Default -1 [show all]
+ * 
  * (array) $search = [
  * [
- * 'typeSearch' => ['p' OR 't']
+ * 'typeSearch' => ['p' OR 't'] p for post type , t for taxonomy
  * 'namePostTax' => name post type OR name taxonomy
  * 'nameField' => 'name in input' //exmple name="input"
- * 'valueByArray' => false //default false  [true OR FALSE]
- * 'value' => value input default null
+ * 
+ *  // note: If typeSearch is equal to p, the nameField must be the same as the field name in acf
+ * ],
+ * etc
  * ]
- * ]
+ * 
+ * @return array [$args, $langFilter] 
+ * $args Put inside the wp_query
+ * $langFilter echo inside the form 
  */
 function filterWordpress(string $mainPostType, int $postsPerPage = -1, array $search = []){
+    //lang en and ar 
+    // echo $langFilter inside form tag
+    if(ICL_LANGUAGE_CODE == 'en'){
+        $langFilter = "<input type='hidden' name='lang' value='en'>";
+    } elseif(ICL_LANGUAGE_CODE == 'ar'){
+        $langFilter = "<input type='hidden' name='lang' value='ar'>";
+    }
     $errors = new WP_Error();
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args = [
@@ -268,22 +282,84 @@ function filterWordpress(string $mainPostType, int $postsPerPage = -1, array $se
         'order' => 'ASC',
         'posts_per_page' => $postsPerPage,
     ];
-    if($postsPerPage == -1){
+    if($postsPerPage != -1){
         $args['paged'] = $paged;
     }
-
     foreach($search as $value){
+
+        //typeSearch
         if(isset($value['typeSearch']) && str_contains($value['typeSearch'], 'p') || str_contains($value['typeSearch'], 't')){
             $typeSearch = $value['typeSearch'];
         } else {
             $errors->add(500, "(typeSearch) not valid" );
         }
+        //namePostTax
+        if(isset($value['namePostTax'])){
+            $namePostTax = $value['namePostTax'];
+            if($typeSearch == 'p' && !post_type_exists($namePostTax)){
+                $errors->add(500, "(namePostTax) is not post type" );
+            } elseif($typeSearch == 't' && !taxonomy_exists($namePostTax)){
+                $errors->add(500, "(namePostTax) is not taxonomy" );
+            }
+        } else {
+            $errors->add(500, "(namePostTax) is null" );
+        }
+        //nameField
+        if(isset($value['nameField'])){
+            $nameField = $value['nameField'];
+        } else {
+            $errors->add(500, "(nameField) is null" );
+        }
+        //value
+        if(isset($_GET[$nameField]) && !empty($_GET[$nameField])){
+            $value = $_GET[$nameField];
+        } else {
+            $value = null;
+        }
+
+        //process
+        if($errors-> get_error_message()){
+            wp_die($errors-> get_error_message());
+        } else {
+            if($value){
+                if($typeSearch == 't'){
+                    if(!isset($args['tax_query'])){
+                        $args['tax_query'] = [
+                            'relation' => 'AND',
+                            [
+                                'taxonomy' => $namePostTax,
+                                'field' => 'term_id',
+                                'terms' => $value,
+                            ]
+                        ];
+                    } else {
+                        $args['tax_query'][] = [
+                            'taxonomy' => $namePostTax,
+                            'field' => 'term_id',
+                            'terms' => $value,
+                        ];
+                    }
+                } elseif($typeSearch == 'p'){
+                    if(!isset($args['meta_query'])){
+                        $args['meta_query'] = [
+                            'relation' => 'AND',
+                            [
+                                'key' => $nameField,
+                                'value' => $value,
+                                'compare' => 'IN',
+                            ]
+                        ];
+                    } else {
+                        $args['meta_query'][] = [
+                            'key' => $nameField,
+                            'value' => $value,
+                            'compare' => 'IN',
+                        ];
+                    }
+                }
+            }
+        }
     }
 
-    return $args;
+    return [$args, $langFilter];
 }
-filterWordpress(mainPostType: 'nkl', search: [
-    [
-        'typeSearch' => 'p'
-    ]
-]);
