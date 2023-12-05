@@ -60,7 +60,7 @@ html {
   }
 }
 
-//   INPUTS  RESET
+// INPUTS RESET
 input,
 select,
 textarea {
@@ -80,6 +80,7 @@ textarea {
   height: 150px;
 }
 
+// REMOVE INPUT BACKGROUND THAT ADDED BY AUTO COMPLETE
 input:-internal-autofill-selected {
   background-color: transparent !important;
 }
@@ -107,6 +108,7 @@ select {
   cursor: pointer;
 }
 
+// SET THE POSITION OF SELECT'S ARROW IN LTR DIRECTION
 [dir="ltr"] select {
   background-position: right 3% center;
 }

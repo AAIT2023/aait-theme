@@ -16,17 +16,16 @@
 
 //   }
 // }
+
+// SET THE GLOBAL BREADCRUMB STYLE
 .breadcrumpp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include displayFlex();
   height: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  @extend %cover-background;
   position: relative;
 
   h3 {
-    color: #000;
+    color: $textColor;
     font-size: 32px;
     // padding-top: 100px;
     position: relative;
@@ -35,25 +34,20 @@
   }
 
   .overlay {
-    background-color: #0000002e;
+    background-color: $textColor;
   }
 }
-
 
 .breadcrump-head {
   border: 1px solid $mainColor;
   text-align: center;
   padding: 20px;
   min-height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  @include displayFlex($direction: column);
   border-radius: 12px;
   margin-bottom: 30px;
 
   h3 {
     color: $mainColor;
   }
-
 }
