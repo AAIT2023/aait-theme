@@ -2,11 +2,10 @@
   // background-color: $mainColor;
 
   .footer {
-    padding: 50px 0 25px;
+    padding-block: 50px;
     position: relative;
     z-index: 3;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @extend %cover-background;
 
     .row--edit {
       position: relative;
@@ -42,12 +41,12 @@
 
     .links {
       .menu-links {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        flex-wrap: wrap;
+        @include displayFlex(
+          $direction: column,
+          $align: flex-start,
+          $wrap: wrap
+        );
         // list-style: disc;
-        flex-direction: column;
         // padding-inline-start: 20px;
 
         li {
@@ -71,9 +70,7 @@
     }
 
     .contact {
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
+      @include displayFlex($direction: column, $align: flex-start);
       // color: $textColor;
       // margin-bottom: 20px;
 
@@ -81,8 +78,7 @@
         padding: 5px 0;
 
         a {
-          @include displayFlex();
-          gap: 10px;
+          @include displayFlex($gap: 10px);
           color: #fff;
           font-weight: bold;
           font-size: 14px;
@@ -99,10 +95,7 @@
     }
 
     .subscribe {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
+      @include displayFlex($direction: column, $align: flex-start, $gap: 12px);
       width: 80%;
 
       .text {
@@ -121,11 +114,11 @@
         padding: 0;
 
         form {
-          display: flex;
-          align-items: flex-start;
-          position: relative;
-          flex-direction: column;
-          gap: 15px;
+          @include displayFlex(
+            $direction: column,
+            $align: flex-start,
+            $gap: 15px
+          );
           position: relative;
 
           .wrap-flex {
@@ -135,9 +128,8 @@
               overflow: hidden;
 
               &:first-child {
+                @include displayFlex($align: flex-start);
                 flex: 1;
-                display: flex;
-                align-items: flex-start;
                 height: 45px;
 
                 input {
@@ -153,13 +145,11 @@
 
               .wrap {
                 background-color: #ececec;
+                width: 45.33px;
                 height: 100%;
                 aspect-ratio: 1 / 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include displayFlex();
                 color: $mainColor;
-                width: 45.33px;
               }
 
               > p {
@@ -214,12 +204,8 @@
     }
 
     .social-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      margin-bottom: 15px;
+      @include displayFlex($justify: flex-start, $wrap: wrap, $gap: 10px);
+      margin-block-end: 15px;
       // margin-inline-end: 10px;
 
       li {
@@ -228,9 +214,7 @@
           // height: 35px;
           // padding: 5px;
           border-radius: 4px;
-          // display: flex;
-          // align-items: center;
-          // justify-content: center;
+          // @include displayFlex();
           color: $mainColor;
           background-color: #fff;
           transition: $transition;
@@ -264,16 +248,16 @@
     display: none;
 
     .container {
-      gap: 20px;
-      justify-content: space-between;
+      @include displayFlex(
+        $direction: space-between,
+        $align: unset,
+        $wrap: wrap
+      );
       color: #fff;
-      flex-wrap: wrap;
 
       .right {
+        @include displayFlex($direction: column);
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
         .footer-new-img {
           width: 70px;
@@ -287,9 +271,7 @@
         }
 
         .links-new {
-          display: flex;
-          gap: 6px;
-          align-items: center;
+          @include displayFlex($justify: unset, $gap: 6px);
 
           a {
             text-decoration: none;

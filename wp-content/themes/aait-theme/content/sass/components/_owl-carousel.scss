@@ -4,12 +4,8 @@
     position: absolute;
     bottom: -40px;
     // inset-inline-end: 30px;
-    display: flex;
-    align-items: center;
-    // justify-content: center;
+    @include displayFlex($gap: 10px);
     width: 100%;
-    gap: 10px;
-    justify-content: center;
 
     .owl-dot {
       // transition: $transition;
@@ -24,7 +20,7 @@
       span {
         // background-color: #fff;
         width: 10px;
-        height: 10px;
+        aspect-ratio: 1/1;
         margin: 0;
         background-color: #6d5d5d;
         transition: $transition;

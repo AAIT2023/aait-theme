@@ -9,14 +9,15 @@ add_filter('show_admin_bar', '__return_false');
 
 // get the the role object
 // add $cap capability to this role object
-$role_object = get_role( 'editor' );
-$role_object->add_cap( 'edit_theme_options' );
+$role_object = get_role('editor');
+$role_object->add_cap('edit_theme_options');
 
-add_filter( 'auto_update_plugin', '__return_true' );
-add_filter( 'auto_update_theme', '__return_true' );
+add_filter('auto_update_plugin', '__return_true');
+add_filter('auto_update_theme', '__return_true');
 
 //To Add Style And JS Files
-function add_style_js(){
+function add_style_js()
+{
 
     //Style Css
     wp_enqueue_style('all.min.css', get_template_directory_uri() . '/content/css/all.min.css', array(), false);
@@ -37,27 +38,30 @@ function add_style_js(){
 add_action('wp_enqueue_scripts', 'add_style_js');
 
 //Option Page
-function option_page(){
+function option_page()
+{
     $option = array(
         'page_title' => 'اعدادات الموقع',
-        'menu_title'    => __('اعدادات الموقع'),
-        'menu_slug'     => 'general-settings',
-        'capability'    => 'edit_posts',
-        'redirect'      => false
+        'menu_title' => __('اعدادات الموقع'),
+        'menu_slug' => 'general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
     );
     acf_add_options_page($option);
 }
 add_action('acf/init', 'option_page');
 
-function mytheme_register_nav_menu(){
-    register_nav_menus( array(
-        'main_menu' => __( 'main_menu', 'text_domain' ),
-        'other_links' => __( 'other_links', 'text_domain' ),
-		'other_links2' => __( 'other_links2', 'text_domain' ),
-        'other_links3' => __( 'other_links3', 'text_domain' )
-    ) );
+function mytheme_register_nav_menu()
+{
+    register_nav_menus(
+        array(
+            'main_menu' => __('main_menu', 'text_domain'),
+            'other_links' => __('other_links', 'text_domain'),
+            'other_links2' => __('other_links2', 'text_domain'),
+            'other_links3' => __('other_links3', 'text_domain')
+        ));
 }
-add_action( 'after_setup_theme', 'mytheme_register_nav_menu', 0 );
+add_action('after_setup_theme', 'mytheme_register_nav_menu', 0);
 
 /*
     createPostType function
@@ -93,43 +97,45 @@ add_action( 'after_setup_theme', 'mytheme_register_nav_menu', 0 );
 
 // FUNCTION TO CREATE POST TYPE 
 function createPostType(
-    string $namePostType, 
+    string $namePostType,
     array $arrayOptionPostType,
 
     bool $acceptTaxonomy = false,
-    array $arrayOptionTaxonomy = []){
-        $label = [
-            'public' => true,
-            'labels' => $arrayOptionPostType
-        ];
+    array $arrayOptionTaxonomy = []
+) {
+    $label = [
+        'public' => true,
+        'labels' => $arrayOptionPostType
+    ];
     register_post_type($namePostType, $label);
-    add_post_type_support($namePostType, 'thumbnail' );
+    add_post_type_support($namePostType, 'thumbnail');
 
-    if($acceptTaxonomy){
-        if(empty($arrayOptionTaxonomy)){
+    if ($acceptTaxonomy) {
+        if (empty($arrayOptionTaxonomy)) {
             $arrayOptionTaxonomy = [
-                'name' => _x( 'الاقسام', 'taxonomy general name' ),
-                'singular_name' => _x( 'الاقسام', 'taxonomy singular name' ),
-                'search_items' =>  __( 'بحث عن الاقسام' ),
-                'all_items' => __( 'كل الاقسام' ),
-                'parent_item' => __( 'Parent Subject' ),
-                'parent_item_colon' => __( 'Parent Subject:' ),
-                'edit_item' => __( 'تعديل القسم' ), 
-                'update_item' => __( 'تحديث القسم' ),
-                'add_new_item' => __( 'اضف قسم جديده' ),
-                'new_item_name' => __( 'اسم جديد للقسم' ),
-                'menu_name' => __( 'الاقسام' ),
+                'name' => _x('الاقسام', 'taxonomy general name'),
+                'singular_name' => _x('الاقسام', 'taxonomy singular name'),
+                'search_items' => __('بحث عن الاقسام'),
+                'all_items' => __('كل الاقسام'),
+                'parent_item' => __('Parent Subject'),
+                'parent_item_colon' => __('Parent Subject:'),
+                'edit_item' => __('تعديل القسم'),
+                'update_item' => __('تحديث القسم'),
+                'add_new_item' => __('اضف قسم جديده'),
+                'new_item_name' => __('اسم جديد للقسم'),
+                'menu_name' => __('الاقسام'),
             ];
         }
-          register_taxonomy("{$namePostType}_tax",array($namePostType), array(
+        register_taxonomy("{$namePostType}_tax", array($namePostType), array(
             'hierarchical' => true,
             'labels' => $arrayOptionTaxonomy,
             'show_ui' => true,
             'show_in_rest' => true,
             'show_admin_column' => true,
             'query_var' => true,
-            'rewrite' => array( 'slug' => "{$namePostType}_tax" ),
-          ));
+            'rewrite' => array('slug' => "{$namePostType}_tax"),
+        )
+        );
     }
 }
 
@@ -137,19 +143,19 @@ function createPostType(
 /*
   //EXAMPLE TO CREATE POST TYPE ONLY  WITHOUT TAXONOMY 
 */
-    createPostType(
+createPostType(
     'services',  // TYPE YOUR POST TYPE NAME HERE 
     [
         'name' => 'الخدمات', // TYPE YOUR POST TYPE NAME HERE IN ARABIC 
-        'singular_name' => 'الخدمات', 
+        'singular_name' => 'الخدمات',
         'add_new' => 'اضف خدمة جديده',
         'add_new_item' => 'اضف خدمة جديده',
         'edit_item' => 'تعديل الخدمة',
 
     ]
-  );
+);
 
-  createPostType(
+createPostType(
     'services',
     [
         'name' => 'الخدمات',
@@ -159,10 +165,10 @@ function createPostType(
         'edit_item' => 'تعديل الخدمة'
     ],
     true, //SET TO TRUE TO ACTIVATE TAXONOMY 
-  );
+);
 
-  //EXAMPLE TO CREATE POST TYPE WITH TAXONOMY 
-  createPostType(
+//EXAMPLE TO CREATE POST TYPE WITH TAXONOMY 
+createPostType(
     'services', // TYPE YOUR POST TYPE NAME HERE 
     [
         'name' => 'الخدمات',
@@ -171,43 +177,44 @@ function createPostType(
         'add_new_item' => 'اضف خدمة جديده',
         'edit_item' => 'تعديل الخدمة'
     ],
-    true, 
+    true,
     [
-    'name' => _x( 'اقسام الخدمات', 'taxonomy general name' ),
-    'singular_name' => _x( 'اقسام الخدمات', 'taxonomy singular name' ),
-    'search_items' =>  __( 'بحث عن اقسام الخدمات' ),
-    'all_items' => __( 'كل الاقسام' ),
-    'parent_item' => __( 'Parent Subject' ),
-    'parent_item_colon' => __( 'Parent Subject:' ),
-    'edit_item' => __( 'تعديل القسم' ), 
-    'update_item' => __( 'تحديث القسم' ),
-    'add_new_item' => __( 'اضف قسم جديده' ),
-    'new_item_name' => __( 'اسم جديد للقسم' ),
-    'menu_name' => __( 'الاقسام' ),
-  ]
-  );
- */
+        'name' => _x('اقسام الخدمات', 'taxonomy general name'),
+        'singular_name' => _x('اقسام الخدمات', 'taxonomy singular name'),
+        'search_items' => __('بحث عن اقسام الخدمات'),
+        'all_items' => __('كل الاقسام'),
+        'parent_item' => __('Parent Subject'),
+        'parent_item_colon' => __('Parent Subject:'),
+        'edit_item' => __('تعديل القسم'),
+        'update_item' => __('تحديث القسم'),
+        'add_new_item' => __('اضف قسم جديده'),
+        'new_item_name' => __('اسم جديد للقسم'),
+        'menu_name' => __('الاقسام'),
+    ]
+);
+
 
 
 // to add post type in contact form 7
-function dynamic_field_values_jop ( $tag, $unused ) {
+function dynamic_field_values_jop($tag, $unused)
+{
 
-    if ( $tag['name'] != 'type_car' )
+    if ($tag['name'] != 'type_car')
         return $tag;
 
-    $args = array (
-        'numberposts'   => -1,
-        'post_type'     => 'type_car',
-        'orderby'       => 'title',
-        'order'         => 'ASC',
+    $args = array(
+        'numberposts' => -1,
+        'post_type' => 'type_car',
+        'orderby' => 'title',
+        'order' => 'ASC',
     );
 
     $custom_posts = get_posts($args);
 
-    if ( ! $custom_posts )
+    if (!$custom_posts)
         return $tag;
 
-    foreach ( $custom_posts as $custom_post ) {
+    foreach ($custom_posts as $custom_post) {
 
         $tag['raw_values'][] = $custom_post->post_title;
         $tag['values'][] = $custom_post->post_title;
@@ -218,21 +225,23 @@ function dynamic_field_values_jop ( $tag, $unused ) {
     return $tag;
 
 }
-add_filter( 'wpcf7_form_tag', 'dynamic_field_values_jop', 10, 2);
+add_filter('wpcf7_form_tag', 'dynamic_field_values_jop', 10, 2);
 
 //to echo lang
-function lang_in($ar, $en){
-    if(ICL_LANGUAGE_CODE == 'ar'){
+function lang_in($ar, $en)
+{
+    if (ICL_LANGUAGE_CODE == 'ar') {
         echo $ar;
-    } elseif (ICL_LANGUAGE_CODE == 'en'){
+    } elseif (ICL_LANGUAGE_CODE == 'en') {
         echo $en;
     }
 }
 //to return lang
-function lang_in_return($ar, $en){
-    if(ICL_LANGUAGE_CODE == 'ar'){
+function lang_in_return($ar, $en)
+{
+    if (ICL_LANGUAGE_CODE == 'ar') {
         return $ar;
-    } elseif (ICL_LANGUAGE_CODE == 'en'){
+    } elseif (ICL_LANGUAGE_CODE == 'en') {
         return $en;
     }
 }
@@ -259,12 +268,13 @@ function lang_in_return($ar, $en){
  * $args Put inside the wp_query
  * $langFilter echo inside the form 
  */
-function filterWordpress(string $mainPostType, int $postsPerPage = -1, array $search = []){
+function filterWordpress(string $mainPostType, int $postsPerPage = -1, array $search = [])
+{
     //lang en and ar 
     // echo $langFilter inside form tag
-    if(ICL_LANGUAGE_CODE == 'en'){
+    if (ICL_LANGUAGE_CODE == 'en') {
         $langFilter = "<input type='hidden' name='lang' value='en'>";
-    } elseif(ICL_LANGUAGE_CODE == 'ar'){
+    } elseif (ICL_LANGUAGE_CODE == 'ar') {
         $langFilter = "<input type='hidden' name='lang' value='ar'>";
     }
     $errors = new WP_Error();
@@ -274,48 +284,48 @@ function filterWordpress(string $mainPostType, int $postsPerPage = -1, array $se
         'order' => 'ASC',
         'posts_per_page' => $postsPerPage,
     ];
-    if($postsPerPage != -1){
+    if ($postsPerPage != -1) {
         $args['paged'] = $paged;
     }
-    foreach($search as $value){
+    foreach ($search as $value) {
 
         //typeSearch
-        if(isset($value['typeSearch']) && str_contains($value['typeSearch'], 'p') || str_contains($value['typeSearch'], 't')){
+        if (isset($value['typeSearch']) && str_contains($value['typeSearch'], 'p') || str_contains($value['typeSearch'], 't')) {
             $typeSearch = $value['typeSearch'];
         } else {
-            $errors->add(500, "(typeSearch) not valid" );
+            $errors->add(500, "(typeSearch) not valid");
         }
         //namePostTax
-        if(isset($value['namePostTax'])){
+        if (isset($value['namePostTax'])) {
             $namePostTax = $value['namePostTax'];
-            if($typeSearch == 'p' && !post_type_exists($namePostTax)){
-                $errors->add(500, "(namePostTax) is not post type" );
-            } elseif($typeSearch == 't' && !taxonomy_exists($namePostTax)){
-                $errors->add(500, "(namePostTax) is not taxonomy" );
+            if ($typeSearch == 'p' && !post_type_exists($namePostTax)) {
+                $errors->add(500, "(namePostTax) is not post type");
+            } elseif ($typeSearch == 't' && !taxonomy_exists($namePostTax)) {
+                $errors->add(500, "(namePostTax) is not taxonomy");
             }
         } else {
-            $errors->add(500, "(namePostTax) is null" );
+            $errors->add(500, "(namePostTax) is null");
         }
         //nameField
-        if(isset($value['nameField'])){
+        if (isset($value['nameField'])) {
             $nameField = $value['nameField'];
         } else {
-            $errors->add(500, "(nameField) is null" );
+            $errors->add(500, "(nameField) is null");
         }
         //value
-        if(isset($_GET[$nameField]) && !empty($_GET[$nameField])){
+        if (isset($_GET[$nameField]) && !empty($_GET[$nameField])) {
             $value = $_GET[$nameField];
         } else {
             $value = null;
         }
 
         //process
-        if($errors-> get_error_message()){
-            wp_die($errors-> get_error_message());
+        if ($errors->get_error_message()) {
+            wp_die($errors->get_error_message());
         } else {
-            if($value){
-                if($typeSearch == 't'){
-                    if(!isset($args['tax_query'])){
+            if ($value) {
+                if ($typeSearch == 't') {
+                    if (!isset($args['tax_query'])) {
                         $args['tax_query'] = [
                             'relation' => 'AND',
                             [
@@ -331,8 +341,8 @@ function filterWordpress(string $mainPostType, int $postsPerPage = -1, array $se
                             'terms' => $value,
                         ];
                     }
-                } elseif($typeSearch == 'p'){
-                    if(!isset($args['meta_query'])){
+                } elseif ($typeSearch == 'p') {
+                    if (!isset($args['meta_query'])) {
                         $args['meta_query'] = [
                             'relation' => 'AND',
                             [

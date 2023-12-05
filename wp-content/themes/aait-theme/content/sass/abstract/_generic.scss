@@ -8,11 +8,14 @@ body {
   // background-image: url('../images/body-bgsvg.svg');
 }
 
+// set body direction to ltr in english
 [dir="ltr"] body {
   direction: ltr;
 }
 
 // GLOBAL STYLE FOR ALL TEXT
+
+// TEXT FOR CARDS
 .text {
   color: $textColor;
   font-family: $fontFamily;
@@ -20,6 +23,7 @@ body {
   @include textTruncate();
 }
 
+// TEXT IN POST TYPE SINGLE PAGE
 .content-text {
   color: $textColor;
   font-family: $fontFamily;
@@ -53,32 +57,24 @@ figure.image-wrap {
   z-index: 3;
 }
 
+// FOR SECTIONS AND PAGES HEAD TITLE
 .head {
-  text-align: start;
   margin-bottom: 30px;
 
   > .title {
     font-size: 30px;
     line-height: 1;
-    margin-bottom: 20px;
-    text-align: start;
+    margin-block-end: 15px;
     position: relative;
     width: fit-content;
-    margin: 0 0 15px 0;
     text-transform: capitalize;
-    // padding: 20px 0;
-    // animation: typewriter 4s steps(44) 1s 1 normal both,
-    //   blinkTextCursor 500ms steps(44) infinite normal;
     // overflow: hidden;
-    // display: flex;
-    // align-items: center;
-    gap: 20px;
+    // @include displayFlex($justify: flex-start);
     color: $textColor;
-    padding-bottom: 12px;
+    padding-block-end: 12px;
 
     &::before {
-      content: "";
-      position: absolute;
+      @extend %pseudo-ele;
       inset-inline-start: 0;
       bottom: 0;
       height: 3px;
@@ -97,6 +93,7 @@ figure.image-wrap {
       // color: $mainColor;
       font-size: 28px;
       font-weight: bold;
+      // @include displayFlex($justify: flex-start);
 
       &::before {
         left: 0;
@@ -108,16 +105,6 @@ figure.image-wrap {
     .text {
       margin: auto;
     }
-  }
-
-  .text {
-    max-height: 75px;
-    font-size: 18px;
-    line-height: 2;
-    // width: 50%;
-    // margin: 0 auto 20px;
-    color: $textColor;
-    width: 75%;
   }
 
   &.borderd {
@@ -152,9 +139,9 @@ iframe {
 
 // CLASS FOR ALL PAGES TO CONTROL FIXED NAVBAR
 .padding-page {
-  padding-top: 120px;
-  padding-bottom: 50px;
+  padding-block: 120px 50px;
 }
+
 
 // GLOBAL STYLES FOR CONTACT LINKS
 .contact {

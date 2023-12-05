@@ -30,9 +30,6 @@
       border-radius: 50%;
       width: 30px;
       aspect-ratio: 1/1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       @include displayFlex();
       color: #fff;
     }
@@ -58,9 +55,8 @@
     margin: auto;
     z-index: 99999;
     // border-radius: 24px;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
-
     // box-shadow: 0 3px 3px #000;
 
     form {
