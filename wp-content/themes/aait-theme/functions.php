@@ -33,7 +33,7 @@ function add_style_js()
     wp_enqueue_script('wow.min.js', get_template_directory_uri() . '/content/js/wow.min.js', array(), false, true);
     //https://fancyapps.com/fancybox/getting-started/
     wp_enqueue_script('fancybox.umd.js', get_template_directory_uri() . '/content/js/fancybox.umd.js', array(), false, true);
-    wp_enqueue_script('script.js', get_template_directory_uri() . '/content/js/script.js', array(), false, true);
+    wp_enqueue_script('script.js', get_template_directory_uri() . '/content/js/main.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'add_style_js');
 
