@@ -17,17 +17,13 @@ body {
 
 // TEXT FOR CARDS
 .text {
-  color: $textColor;
-  font-family: $fontFamily;
-  line-height: 2;
+  @extend %text; //EXTEND FROM RESET FILE 
   @include textTruncate();
 }
 
 // TEXT IN POST TYPE SINGLE PAGE
 .content-text {
-  color: $textColor;
-  font-family: $fontFamily;
-  line-height: 2;
+  @extend %text;//EXTEND FROM RESET FILE 
 }
 
 // DIV WRAP IMAGES AND VEDIOS
@@ -37,6 +33,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  &.contain{
+    object-fit: contain;
   }
 }
 

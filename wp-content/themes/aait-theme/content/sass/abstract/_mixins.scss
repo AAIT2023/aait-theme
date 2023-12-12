@@ -2,7 +2,7 @@
 @mixin displayFlex(
   $direction: row,
   $align: center,
-  $justify: center,
+  $justify: flex-start,
   $wrap: nowrap,
   $gap: 20px
 ) {
