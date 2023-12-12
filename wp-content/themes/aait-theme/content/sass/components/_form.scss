@@ -1,5 +1,16 @@
+// STYLES FOR INPUTS 
+%input-styles{
+  background-color: transparent;
+  min-height: 45px;
+  padding: 10px;
+  direction: inherit;
+  border-radius: 6px;
+  flex-direction: row-reverse;
+  font-size: 16px;
+  border: 1px solid $borderColor;
+  // color: $textColor;
+}
 // CLASS FOR WRAP ALL FORMS
-
 .form-wrapper {
   // background-color: #fff;
   padding: 15px;
@@ -23,20 +34,16 @@
     .input-wrap {
       margin-bottom: 20px;
 
-      input,
-      select,
-      textarea {
+      input{
         &:not([type="checkbox"]),
         &:not([type="submit"]) {
-          background-color: transparent;
-          min-height: 45px;
-          padding: 10px;
-          direction: inherit;
-          border-radius: 6px;
-          flex-direction: row-reverse;
-          font-size: 16px;
-          border: 1px solid $borderColor;
-          // color: $textColor;
+          @extend %input-styles;
+  
+      }
+    }
+      select,
+      textarea {
+          @extend %input-styles;
         }
 
         &::-webkit-datetime-edit {
@@ -157,4 +164,4 @@
       display: none;
     }
   }
-}
+

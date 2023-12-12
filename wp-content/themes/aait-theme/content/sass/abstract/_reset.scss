@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $fontFamily;
 }
 
 ul {
@@ -103,9 +104,9 @@ select {
   text-indent: 10px;
   background-image: url("../images/chevron-down-solid.svg");
   background-repeat: no-repeat;
-  background-position: left 3% center;
   background-size: 16px;
   cursor: pointer;
+  background-position: left 3% center;
 }
 
 // SET THE POSITION OF SELECT'S ARROW IN LTR DIRECTION

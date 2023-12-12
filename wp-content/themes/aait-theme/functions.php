@@ -63,45 +63,14 @@ function mytheme_register_nav_menu()
 }
 add_action('after_setup_theme', 'mytheme_register_nav_menu', 0);
 
-/*
-    createPostType function
-
-    $namePostType => (string) name post type
-
-    $arrayOptionPostType => (array) labels post type
-    exp [
-        'name' => 'الاخبار',
-        'singular_name' => 'الاخبار',
-        'add_new' => 'اضف خبر جديده',
-        'add_new_item' => 'اضف خبر جديده',
-        'edit_item' => 'تعديل الخبر'
-    ]
-
-    $acceptTaxonomy => (boolean) to active Taxonomy Default false
-
-    $arrayOptionTaxonomy => (array) labels Taxonomy Default
-    [
-        'name' => _x( 'الاقسام', 'taxonomy general name' ),
-        'singular_name' => _x( 'الاقسام', 'taxonomy singular name' ),
-        'search_items' =>  __( 'بحث عن الاقسام' ),
-        'all_items' => __( 'كل الاقسام' ),
-        'parent_item' => __( 'Parent Subject' ),
-        'parent_item_colon' => __( 'Parent Subject:' ),
-        'edit_item' => __( 'تعديل القسم' ), 
-        'update_item' => __( 'تحديث القسم' ),
-        'add_new_item' => __( 'اضف قسم جديده' ),
-        'new_item_name' => __( 'اسم جديد للقسم' ),
-        'menu_name' => __( 'الاقسام' ),
-    ];
-*/
 
 // FUNCTION TO CREATE POST TYPE 
 function createPostType(
-    string $namePostType,
-    array $arrayOptionPostType,
+    string $namePostType, //  => (string)  Post Type Name
+    array $arrayOptionPostType, //(array)  Post Type Labels
 
-    bool $acceptTaxonomy = false,
-    array $arrayOptionTaxonomy = []
+    bool $acceptTaxonomy = false, //(boolean) Set To True To Accept Taxonomy
+    array $arrayOptionTaxonomy = [] //(array)  Taxonomy Default Labels
 ) {
     $label = [
         'public' => true,
@@ -143,55 +112,57 @@ function createPostType(
 /*
   //EXAMPLE TO CREATE POST TYPE ONLY  WITHOUT TAXONOMY 
 */
-createPostType(
-    'services',  // TYPE YOUR POST TYPE NAME HERE 
-    [
-        'name' => 'الخدمات', // TYPE YOUR POST TYPE NAME HERE IN ARABIC 
-        'singular_name' => 'الخدمات',
-        'add_new' => 'اضف خدمة جديده',
-        'add_new_item' => 'اضف خدمة جديده',
-        'edit_item' => 'تعديل الخدمة',
+// createPostType(
+//     'services',  // TYPE YOUR POST TYPE NAME HERE 
+//     [
+//         'name' => 'الخدمات', // TYPE YOUR POST TYPE NAME HERE IN ARABIC 
+//         'singular_name' => 'الخدمات',
+//         'add_new' => 'اضف خدمة جديده',
+//         'add_new_item' => 'اضف خدمة جديده',
+//         'edit_item' => 'تعديل الخدمة',
 
-    ]
-);
+//     ]
+// );
 
-createPostType(
-    'services',
-    [
-        'name' => 'الخدمات',
-        'singular_name' => 'الخدمات',
-        'add_new' => 'اضف خدمة جديده',
-        'add_new_item' => 'اضف خدمة جديده',
-        'edit_item' => 'تعديل الخدمة'
-    ],
-    true, //SET TO TRUE TO ACTIVATE TAXONOMY 
-);
 
 //EXAMPLE TO CREATE POST TYPE WITH TAXONOMY 
-createPostType(
-    'services', // TYPE YOUR POST TYPE NAME HERE 
-    [
-        'name' => 'الخدمات',
-        'singular_name' => 'الخدمات',
-        'add_new' => 'اضف خدمة جديده',
-        'add_new_item' => 'اضف خدمة جديده',
-        'edit_item' => 'تعديل الخدمة'
-    ],
-    true,
-    [
-        'name' => _x('اقسام الخدمات', 'taxonomy general name'),
-        'singular_name' => _x('اقسام الخدمات', 'taxonomy singular name'),
-        'search_items' => __('بحث عن اقسام الخدمات'),
-        'all_items' => __('كل الاقسام'),
-        'parent_item' => __('Parent Subject'),
-        'parent_item_colon' => __('Parent Subject:'),
-        'edit_item' => __('تعديل القسم'),
-        'update_item' => __('تحديث القسم'),
-        'add_new_item' => __('اضف قسم جديده'),
-        'new_item_name' => __('اسم جديد للقسم'),
-        'menu_name' => __('الاقسام'),
-    ]
-);
+// createPostType(
+//     'services',
+//     [
+//         'name' => 'الخدمات',
+//         'singular_name' => 'الخدمات',
+//         'add_new' => 'اضف خدمة جديده',
+//         'add_new_item' => 'اضف خدمة جديده',
+//         'edit_item' => 'تعديل الخدمة'
+//     ],
+//     true, //SET TO TRUE TO ACTIVATE TAXONOMY 
+// );
+
+
+// createPostType(
+//     'services', // TYPE YOUR POST TYPE NAME HERE 
+//     [
+//         'name' => 'الخدمات',
+//         'singular_name' => 'الخدمات',
+//         'add_new' => 'اضف خدمة جديده',
+//         'add_new_item' => 'اضف خدمة جديده',
+//         'edit_item' => 'تعديل الخدمة'
+//     ],
+//     true,
+//     [
+//         'name' => _x('اقسام الخدمات', 'taxonomy general name'),
+//         'singular_name' => _x('اقسام الخدمات', 'taxonomy singular name'),
+//         'search_items' => __('بحث عن اقسام الخدمات'),
+//         'all_items' => __('كل الاقسام'),
+//         'parent_item' => __('Parent Subject'),
+//         'parent_item_colon' => __('Parent Subject:'),
+//         'edit_item' => __('تعديل القسم'),
+//         'update_item' => __('تحديث القسم'),
+//         'add_new_item' => __('اضف قسم جديده'),
+//         'new_item_name' => __('اسم جديد للقسم'),
+//         'menu_name' => __('الاقسام'),
+//     ]
+// );
 
 
 

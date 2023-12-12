@@ -18,3 +18,9 @@
     size: cover;
   }
 }
+%text{
+  color: $textColor;
+  font-family: $fontFamily;
+  line-height: 2;
+  text-wrap: balance;
+}
