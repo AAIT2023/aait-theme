@@ -166,7 +166,6 @@
       width: 31px;
       height: 21px;
       @include displayFlex(column, unset, space-between, unset, unset);
-      flex: 0 0 10.5%;
       cursor: pointer;
       // order: 2;
       .bar {
