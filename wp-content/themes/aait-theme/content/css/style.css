@@ -332,7 +332,7 @@ section {
   padding: 50px 0;
 }
 
-.page-loading .navbar-brand::before, .icon-scroll::before, .nav-bar .nav-flex .navbar-links > li > a::before, .head > .title::before {
+.page-loading .navbar-brand::before, .icon-scroll::before, .navbar-mobile::before, .nav-bar .nav-flex .navbar-links > li > a::before, .head > .title::before {
   content: "";
   display: block;
   position: absolute;
@@ -1009,17 +1009,13 @@ section {
 
 .navbar-mobile {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: -1200px;
+  inset-inline-start: -100%;
   background-color: rgba(33, 36, 61, 0.6901960784);
   color: #7f7f7f;
   opacity: 0;
   visibility: hidden;
-  text-align: center;
   padding: 20px 20px 0 0;
-  overflow: scroll;
+  overflow: auto;
   width: 90%;
   height: 100%;
   -webkit-transition: all 1s ease-in-out;
@@ -1029,20 +1025,16 @@ section {
   z-index: 99999;
 }
 .navbar-mobile::before {
-  content: "";
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   width: 0%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7019607843);
   z-index: 0;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.7s all linear;
-  transition: 0.7s all linear;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 .navbar-mobile .nav-flex {
   display: -webkit-box;
@@ -1205,7 +1197,7 @@ section {
 .navbar-mobile.active {
   opacity: 1;
   visibility: visible;
-  right: 0;
+  inset-inline-start: 0;
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
 }
