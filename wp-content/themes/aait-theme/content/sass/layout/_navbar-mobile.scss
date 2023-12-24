@@ -1,38 +1,32 @@
 .navbar-mobile {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: -1200px;
+  inset-inline-start: -100%;
   background-color: #21243db0;
   color: $textColor;
   opacity: 0;
   visibility: hidden;
-  text-align: center;
   padding: 20px 20px 0 0;
-  overflow: scroll;
+  overflow: auto;
   width: 90%;
   height: 100%;
   transition: all 1s ease-in-out;
   text-align: start;
-  border-left: 4px solid #fff;
+  border-left: 4px solid $pageColor;
   z-index: 99999;
   // position: relative;
 
   &::before {
-    content: "";
+    @extend %pseudo-ele;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     width: 0%;
     height: 100%;
     background-color: #000000b3;
     z-index: 0;
+
     opacity: 0;
     visibility: hidden;
-    transition: 0.7s all linear;
+    transition: $transition7;
   }
 
   .nav-flex {
@@ -180,7 +174,7 @@
   &.active {
     opacity: 1;
     visibility: visible;
-    right: 0;
+    inset-inline-start: 0;
     transition: 1s ease all;
 
     &::before {
