@@ -13,7 +13,7 @@
       overflow: hidden;
       border-radius: 12px;
       position: relative;
-      background: #F5F5F5;
+      background: #f5f5f5;
 
       .image-wrap {
         height: 200px;
@@ -25,8 +25,6 @@
           transform: scale(1);
           transition: $transition;
         }
-
-
       }
 
       .body {
@@ -73,6 +71,7 @@
       .more-btn {
         text-align: center;
         height: 45px;
+        @include displayFlex($justify: center);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -108,7 +107,6 @@
           color: #fff;
           transition: $transition;
 
-
           &::before {
             height: 100%;
             transition: $transition;
@@ -124,7 +122,5 @@
       overflow: hidden;
       margin: 0 auto 50px;
     }
-
   }
-
 }

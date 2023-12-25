@@ -13,6 +13,8 @@
   opacity: 0;
   transform: translateY(calc(100% + 20px));
   transition: $transition;
+  cursor: pointer;
+
   img {
     width: 25px;
   }

@@ -164,12 +164,37 @@ $(document).ready(function () {
         nav: false,
         dots: false,
       },
+      320: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      425: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
       600: {
         items: 1,
         nav: false,
         dots: false,
       },
-      1000: {
+      768: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      992: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      1024: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      1440: {
         items: 1,
         nav: false,
         dots: false,
@@ -202,14 +227,39 @@ $(document).ready(function () {
         nav: false,
         dots: false,
       },
-      600: {
-        items: 3,
-        nav: true,
+      320: {
+        items: 1,
+        nav: false,
         dots: false,
       },
-      1000: {
-        items: 6,
-        nav: true,
+      425: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      600: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      768: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      992: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      1024: {
+        items: 1,
+        nav: false,
+        dots: false,
+      },
+      1440: {
+        items: 1,
+        nav: false,
         dots: false,
       },
     },
