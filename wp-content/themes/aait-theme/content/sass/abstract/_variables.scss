@@ -61,6 +61,9 @@ $transition7: all 0.7s ease-in-out;
 /* MAIN FONT FAMILY */
 $fontFamily: "Roboto";
 
+/* MAIN FONT SIZE */
+$fontSize: 16px;
+
 /* COLORS VARIABLES */
 $mainColor: #336d32; // main site color
 $lightMainColor: #e6ca5533; // main site light color
@@ -68,4 +71,5 @@ $secondaryColor: #777; // secondary site color
 $textColor: #7f7f7f; // main text color
 $borderColor: #a0a0a0; // main border color
 $pageColor: #fff; // site page background color
+$whiteText: #fff; // site white text color
 $scrollTrackColor: #eeedf3; // site scrollbar track color

@@ -3,6 +3,42 @@
   border-radius: 100%;
 }
 
+//  RESET TYPOGRAPHY SIZES
+// .h1,
+// h1 {
+//   font-size: 2.5rem;
+// }
+
+// .h2,
+// h2 {
+//   font-size: 2rem;
+// }
+
+// .h3,
+// h3 {
+//   font-size: 1.75rem;
+// }
+
+// .h4,
+// h4 {
+//   font-size: 1.5rem;
+// }
+
+// .h5,
+// h5 {
+//   font-size: 1.25rem;
+// }
+
+// .h6,
+// h6 {
+//   font-size: 1rem;
+// }
+
+// .small,
+// small {
+//   font-size: 0.875em;
+// }
+
 // TEXT IN CENTER
 .text-center {
   text-align: center;
@@ -142,6 +178,14 @@
 
 .mt-100 {
   margin-top: 100px;
+}
+
+.m-x-auto {
+  margin-inline: auto;
+}
+
+.m-y-auto {
+  margin-block: auto;
 }
 
 // PADDING ELEMENT TOP AND BOTTOM
