@@ -8,13 +8,13 @@
   text-align: center;
   border: 1px solid $mainColor;
   font-size: 18px;
-  @include displayFlex();
+  @include displayFlex($justify: center);
   gap: 10px;
   position: relative;
   z-index: 3;
   transition: $transition;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer !important;
 
   &:hover {
     transition: $transition;

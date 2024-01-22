@@ -5,7 +5,7 @@
   inset-inline-end: 20px;
   width: 30px;
   aspect-ratio: 1/1;
-  @include displayFlex();
+  @include displayFlex($justify : center);
   background-color: $mainColor;
   border: none;
   z-index: 10;
@@ -13,7 +13,7 @@
   opacity: 0;
   transform: translateY(calc(100% + 20px));
   transition: $transition;
-  cursor: pointer;
+  cursor: pointer !important;
 
   img {
     width: 25px;

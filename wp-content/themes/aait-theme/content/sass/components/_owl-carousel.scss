@@ -65,7 +65,7 @@
       width: 30px;
       aspect-ratio: 1/1;
       border-radius: 50%;
-      @include displayFlex();
+      @include displayFlex($justify : center);
       border: 2px solid #fff;
       // background-color: #fff;
       // transition: $transition;
