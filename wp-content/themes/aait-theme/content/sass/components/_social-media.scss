@@ -1,0 +1,51 @@
+// GLOBAL STYLES FOR SOCIAL LINKS
+.social-links {
+  @include displayFlex($justify: unset, $wrap: wrap, $gap: 10px);
+
+  li {
+    border-radius: 50%;
+
+    a {
+      width: 27px;
+      height: 27px;
+      padding: 10px;
+      border-radius: 6px;
+      @include displayFlex();
+      background-color: $mainColor;
+      color: $pageColor;
+    }
+
+    // IF NEED TO COLOR EACH ICON WITH ITS ORIGINAL COLOR
+    // &.instagram {
+    //   a {
+    //     background: linear-gradient(150deg, rgba(250, 225, 0, 1) 0%, rgba(252, 183, 32, 1) 20%, rgba(255, 121, 80, 1) 35%, rgba(255, 28, 116, 1) 56%, rgba(108, 28, 209, 1) 99%);
+    //   }
+    // }
+
+    // &.whatsapp {
+    //   a {
+    //     background-color: #67D449;
+    //   }
+    // }
+
+    // &.twitter {
+    //   a {
+    //     background-color: #41A1F2;
+    //   }
+    // }
+
+    // &.facebook,
+    // &.messenger {
+    //   a {
+    //     background-color: #41A1F2;
+    //   }
+    // }
+
+    // &.snapchat {
+    //   a {
+
+    //     background-color: #fffc008c;
+    //   }
+    // }
+  }
+}

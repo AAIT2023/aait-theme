@@ -1,0 +1,7 @@
+.register-page {
+  .form-wrapper form .input-wrap input::-webkit-datetime-edit,
+  .form-wrapper form .input-wrap select::-webkit-datetime-edit,
+  .form-wrapper form .input-wrap textarea::-webkit-datetime-edit {
+    color: $lightMainColor;
+  }
+}
