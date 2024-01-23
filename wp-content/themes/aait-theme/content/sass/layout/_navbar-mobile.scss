@@ -13,7 +13,7 @@
   text-align: start;
   border-left: 4px solid $pageColor;
   z-index: 99999;
-  // position: relative;
+  overflow-x: hidden;
 
   &::before {
     @extend %pseudo-ele;
@@ -185,3 +185,10 @@
     }
   }
 }
+  [dir=ltr] .navbar-mobile {
+    right: unset;
+    left: -1200px;
+  }
+  [dir=ltr] .navbar-mobile.active {
+    left: 0;
+  }

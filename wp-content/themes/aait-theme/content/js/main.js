@@ -208,6 +208,10 @@ $(document).ready(function () {
     margin: 30,
     rtl: dir == "rtl" ? true : false,
     autoplay: true,
+    slideTransition: 'linear',
+    autoplayTimeout: 3000,
+    autoplaySpeed: 3000,
+    autoplayHoverPause: true,
     animateIn: "fadeIn",
     animateOut: "fadeOut",
     navText:
