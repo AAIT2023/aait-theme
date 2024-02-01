@@ -312,8 +312,9 @@ section {
 
 .text, .content-text {
   color: #7f7f7f;
+  font-family: "Roboto";
   line-height: 2;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .border-circle {

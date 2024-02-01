@@ -20,7 +20,7 @@
 }
 %text {
   color: $textColor;
-  // font-family: $fontFamily;
+  font-family: $fontFamily;
   line-height: 2;
-  text-wrap: balance;
+  text-wrap: pretty;
 }

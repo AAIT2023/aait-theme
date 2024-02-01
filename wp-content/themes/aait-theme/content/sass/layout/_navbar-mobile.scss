@@ -1,5 +1,6 @@
 .navbar-mobile {
   position: fixed;
+  top: 0;
   inset-inline-start: -100%;
   background-color: #21243db0;
   color: $textColor;
@@ -11,7 +12,7 @@
   height: 100%;
   transition: all 1s ease-in-out;
   text-align: start;
-  border-left: 4px solid $pageColor;
+  border-inline-end: 4px solid $pageColor;
   z-index: 99999;
   overflow-x: hidden;
 
