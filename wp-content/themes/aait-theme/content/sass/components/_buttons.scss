@@ -24,8 +24,8 @@
 
   &.reversed {
     background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
+    color: $mainColor;
+    border: 2px solid $mainColor;
 
     &:hover {
       background-color: $mainColor;
