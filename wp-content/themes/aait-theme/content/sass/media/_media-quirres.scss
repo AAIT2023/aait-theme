@@ -19,7 +19,11 @@
 }
 
 @media screen and (max-width: 1199px) {
-  .nav-bar {
+
+}
+
+@media screen and (max-width: 991px) {
+    .nav-bar {
     position: relative;
 
     .nav-flex {
@@ -70,9 +74,6 @@
     opacity: 1;
     visibility: visible;
   }
-}
-
-@media screen and (max-width: 991px) {
   .about-page .about .cont--edit .wrapper .text {
     position: unset;
     width: 100%;
