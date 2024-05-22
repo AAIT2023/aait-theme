@@ -157,49 +157,18 @@ $(document).ready(function () {
             "<i class='owl-btn  fa-solid fa-arrow-right'></i>",
             "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
           ],
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      320: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      425: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      600: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      768: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      992: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      1024: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      1440: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-    },
+      responsiveClass: true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:3
+          },
+          1000:{
+              items:5
+          }
+      }
   });
 
   // TESTIMONIALS SLIDER
@@ -225,48 +194,17 @@ $(document).ready(function () {
             "<i class='owl-btn  fa-solid fa-arrow-left '></i>",
           ],
     responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      320: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      425: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      600: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      768: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      992: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      1024: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-      1440: {
-        items: 1,
-        nav: false,
-        dots: false,
-      },
-    },
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
   });
 
   // START WOW JS
